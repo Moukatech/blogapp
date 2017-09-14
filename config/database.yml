@@ -25,8 +25,10 @@ development:
   database: blog
   
 
+# DATABASE_URL="postgres://mrjjwdckjxlqqv:21c7c51e04d2f7088d91325273c4c541e9ee48c6e1779302a896907bc791ebef@ec2-54-221-212-208.compute-1.amazonaws.com:5432/deho07qmam9rg5"
 
-
+# production:
+#   url: ENV['DATABASE_URL']
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -36,4 +38,4 @@ test:
 
 production:
   <<: *default
-  database: "postgres://mrjjwdckjxlqqv:21c7c51e04d2f7088d91325273c4c541e9ee48c6e1779302a896907bc791ebef@ec2-54-221-212-208.compute-1.amazonaws.com:5432/deho07qmam9rg5"
+  database: blog_production
