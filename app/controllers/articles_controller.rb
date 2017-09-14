@@ -22,9 +22,9 @@ class ArticlesController < ApplicationController
   	render 'new'
    end 
    end
-    def show 
+  def show 
     	 @article = Article.find(params[:id])
-    end
+  end
     @article = Article.new
 
     def update

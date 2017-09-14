@@ -1,38 +1,70 @@
 
 
-<div class="center jumbotron">
-<h1>Welcome to our blog post </h1>
-<p>Here are our latest storys
-</p>
-
-<h3>Listing articles</h3>
- 
-<table>
-  <tr>
+   <div class="blog-header">
+      <div class="container">
+        <h2 class="blog-title">The News Break Blog</h2>
+        <p class="lead blog-description">All the trending stories</p>
+      </div>
+    </div> 
+<div class="container">
+     <div class="row">
+      <div class="col-sm-8 blog-main">
+    <table>
+    <tr>
     <th>Title</th>
     <th>Text</th>
-  </tr>
+     </tr>
  
-  <% @articles.each do |article| %>
+   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', articles_path%></td>
-      <% if user_signed_in? %>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-      <% else %>
-      <td></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+      <td><%= link_to 'Read This one', article_path(article)%></td>
+     
+      </tr>
+    <% end %>
+  </table>
 
-<% if user_signed_in? %>
-<%= link_to 'My Blog', controller: 'articles', class: "btn btn-lg btn-primary" %>
-<%else%>
-<%= link_to "Sign up now!", new_user_session_path, class: "btn btn-lg btn-primary" %>
-<% end %>
-</div>
+    </div>
+    <div class="col-sm-3 offset-sm-1 blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset">
+       <% if user_signed_in? %>
+      <%= link_to 'My Blog Posts', controller: 'articles', class: "btn btn-lg btn-primary"%>
+       <%else%>
+     <%= link_to "Sign up now!", new_user_session_path, class: "btn btn-lg btn-primary" %>
+      <% end %>
+    </div>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>We bring to you<em> all the breaking news</em> and trending stories.Do you want one like this follow us to learn more.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+   </div>
+ </div>
