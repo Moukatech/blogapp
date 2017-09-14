@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: blog
+  
   pool: 5
   username: lewis
   password: Nyangau123
@@ -36,4 +36,4 @@ test:
 
 production:
   <<: *default
-  database: blog_production
+  database: "postgres://mrjjwdckjxlqqv:21c7c51e04d2f7088d91325273c4c541e9ee48c6e1779302a896907bc791ebef@ec2-54-221-212-208.compute-1.amazonaws.com:5432/deho07qmam9rg5"
